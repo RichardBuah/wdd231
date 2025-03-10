@@ -1,0 +1,90 @@
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+}
+
+header {
+    background-color: rgb(46, 111, 190);
+    display: flex;
+    justify-content: space-around;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+main {
+    padding: 1.5rem;
+    margin: 1rem;
+}
+
+.firstbox {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.coursework {
+    background-color: lightgray;
+    padding: 20px;
+}
+
+.country {
+    background-color: lightblue;
+    padding: 20px;
+}
+
+
+.coursework, .country {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    padding: 0;
+    position: relative; 
+}
+
+.coursework h2, .country h2 {
+    background-color: #1d4e89; 
+    color: white;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.coursework ul, .country figure {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.country img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.country figcaption {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+footer {
+    background-color: rgb(46, 111, 190);
+}
