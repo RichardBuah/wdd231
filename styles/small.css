@@ -13,12 +13,31 @@ body {
 header {
     background-color: rgb(46, 111, 190);
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#namehead {
+    font-weight: 900;
+    font-size: 2.5rem;
+}
+
+header img {
+    padding-right: 35px;
 }
 
 nav {
     display: flex;
     justify-content: space-evenly;
+    background-color: black; 
+    font-size: 1.5rem; 
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
 }
 
 main {
@@ -26,10 +45,24 @@ main {
     margin: 1rem;
 }
 
+section {
+    margin-bottom: 20px;
+}
+
 .firstbox {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 20px;
+}
+
+.program {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    padding: 0;
+    position: relative; 
 }
 
 .coursework {
@@ -47,7 +80,8 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: right;
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     background-color: white;
@@ -55,7 +89,7 @@ main {
     position: relative; 
 }
 
-.coursework h2, .country h2 {
+.coursework h2, .country h2, .program h2 {
     background-color: #1d4e89; 
     color: white;
     width: 100%;
@@ -65,6 +99,41 @@ main {
     border-top-right-radius: 10px;
     text-align: center;
     font-size: 1.2rem;
+}
+
+.programhead, .programcourse {
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    background-color: red;
+}
+
+.programhead a {
+    display: block;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 2px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+}
+
+.programcourse a {
+    display: flex;
+    justify-content: center;
+    flex-direction: column wrap;
+    text-decoration: none;
+    padding: 2px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 350px;
+    background-color: aqua;
 }
 
 .coursework ul, .country figure {
