@@ -1,0 +1,190 @@
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+}
+
+/* HEADER */
+header {
+    background-color: rgb(46, 111, 190);
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: white;
+}
+
+header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+#namehead {
+    font-weight: 900;
+    font-size: 2rem;
+    text-align: center;
+    flex-grow: 1; /* Centers the name */
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black; 
+    font-size: 1.2rem; 
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 15px;
+}
+
+nav a:hover, nav a.active {
+    color: yellow;
+}
+
+/* MAIN CONTENT */
+main {
+    padding: 1.5rem;
+    margin: 1rem;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+/* GRID LAYOUT */
+.firstbox {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+/* COURSEWORK & COUNTRY STYLING */
+.coursework, .country {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.coursework h2, .country h2 {
+    background-color: #1d4e89;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* LIST STYLING */
+.coursework ul {
+    padding-left: 20px;
+    list-style-position: inside;
+}
+
+/* IMAGE STYLING */
+.country img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* CERTIFICATE SECTION */
+.program {
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    padding: 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.program h2 {
+    background-color: #1d4e89;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+/* BUTTON CONTAINER */
+.programhead, .programcourse {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* TOP FILTER BUTTONS */
+.programhead a {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    width: 100px;
+}
+
+/* COURSE BUTTONS */
+.programcourse a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 120px;
+    text-align: center;
+    font-weight: bold;
+    background-color: brown;
+    color: white;
+}
+
+/* WHITE BACKGROUND BUTTON */
+.programcourse a:nth-child(3), .programcourse a:nth-child(6) {
+    background-color: lightgray;
+    color: black;
+}
+
+/* FOOTER */
+footer {
+    background-color: rgb(46, 111, 190);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+footer .last-update {
+    color: yellow;
+    font-size: 0.9rem;
+}

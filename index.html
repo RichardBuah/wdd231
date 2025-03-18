@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="styles/normalize.css"> 
     <title>Home Page</title>
     <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/large.css">
+    <!-- <link rel="stylesheet" href="styles/large.css"> -->
     <link rel="stylesheet" href="styles/normalize.css">
-    <script src="scripts/dates.js"></script>
-    <script src="scripts/navigation.js"></script>
-    <script src="scripts/course.js"></script>
+    <script src="scripts/dates.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/course.js" defer></script>
 </head>
 <body>
     <header>
@@ -49,23 +49,18 @@
         <section class="program">
             <h2>Web and Computer Programming Certificate</h2>
             <div class="programhead">
-                <div><a href="#">All</a></div>
-                <div><a href="#">CSE</a></div>
-                <div><a href="#">WDD</a></div>
+                <button id="all-btn">All</button>
+                <button id="cse-btn">CSE</button>
+                <button id="wdd-btn">WDD</button>
+                <button id="completed-btn">Completed</button>
             </div>
-            <div class="programcourse">
-                <div><a href="#">CSE 110</a></div>
-                <div><a href="#">CSE 210</a></div>
-                <div><a href="#">WDD 130</a></div>
-                <div><a href="#">WDD 131</a></div>
-                <div><a href="#">CSE 111</a></div>
-                <div><a href="#">WDD 231</a></div>
-            </div>
+            <div class="programcourse"></div>
+            <p id="credit-total" class="credit-display">Total Credits: 0</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy;<span id="currentyear"></span> Richard Buah | Food Joint Application</p>
+        <p>&copy;<span id="currentyear"></span> Richard Buah | Cape Coast, Ghana</p>
         <p class="lastModified"></p>
     </footer>
 </body>

@@ -16,6 +16,7 @@ header {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    color: white;
 }
 
 #namehead {
@@ -106,10 +107,65 @@ section {
     justify-content: center;
     border: 1px solid black;
     flex-wrap: wrap;
-    margin-top: 10px;
-    background-color: red;
+    padding: 1rem;
+    background-color: white;
 }
 
+/* Filter Buttons */
+.programhead button {
+    display: block;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 2px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.programhead button:hover {
+    background-color: grey;
+}
+
+/* Course Cards */
+.course-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    width: 150px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid black;
+    margin: 10px;
+}
+
+/* Completed Course Style */
+.course-card.completed {
+    background-color: rgb(91, 73, 73);
+    color: white;
+}
+
+/* Uncompleted Course Style */
+.course-card.uncompleted {
+    background-color: white;
+    color: black;
+}
+
+/* Credit Display */
+.credit-display {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+/* 
 .programhead a {
     display: block;
     text-decoration: none;
@@ -126,6 +182,7 @@ section {
 .programcourse a {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column wrap;
     text-decoration: none;
     padding: 2px;
@@ -133,8 +190,9 @@ section {
     border: 1px solid black;
     border-radius: 5px;
     width: 350px;
+    min-height: 3rem;
     background-color: aqua;
-}
+} */
 
 .coursework ul, .country figure {
     margin-top: 15px;
@@ -156,4 +214,17 @@ section {
 
 footer {
     background-color: rgb(46, 111, 190);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+footer .last-update {
+    color: yellow;
+    font-size: 0.9rem;
 }
