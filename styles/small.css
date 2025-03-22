@@ -90,25 +90,6 @@ header img {
     box-shadow: 5px 4px 10px rgba(14, 14, 14, 0.4)
 }
 
-nav ul.show-menu {
-    display: flex;
-}
-
-nav ul li {
-    padding: 10px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: larger;
-    display: block;
-}
-
-nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
 .firstbox {
     display: flex;
     flex-direction: column;
@@ -153,7 +134,7 @@ nav ul li a:hover {
     justify-content: center;
     flex: 1;
     text-decoration: none;
-    background-color: black;
+    background-color:#1a1a40;
     color: white;
     padding: 2px;
     margin: 5px;
@@ -163,6 +144,7 @@ nav ul li a:hover {
     text-align: center;
     cursor: pointer;
     font-weight: bold;
+    font-size: 1.25rem;
 }
 
 .programhead button:hover {
@@ -263,8 +245,8 @@ nav ul li a:hover {
 }
 
 footer {
-    background-color: rgb(46, 111, 190);
-    color: white;
+    background-color: rgb(22, 93, 179);
+    color:white;
     text-align: center;
     padding: 15px;
     margin-top: 20px;
@@ -276,10 +258,10 @@ footer {
 }
 
 footer p {
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 footer .last-update {
-    color: yellow;
-    font-size: 0.9rem;
+    color: #ffffff;
+    font-weight: bold;
 }

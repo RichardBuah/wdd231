@@ -13,13 +13,14 @@
 
     nav {
         display: flex;
+        flex-direction: row;
         justify-content: space-evenly;
-        background-color: black; 
-        font-size: 1.5rem; 
-        padding: 10px;
+        align-items: center;
+        background-color: #000;
     }
     
     nav a {
+        border: none;
         text-decoration: none;
         color: white;
     }
@@ -80,6 +81,7 @@
         text-align: center;
         cursor: pointer;
         font-weight: bold;
+        font-size: 1.25rem;
     }
     
     .programhead button:hover {
