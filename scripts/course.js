@@ -83,26 +83,26 @@ function displayCourses(filter = "All") {
     courseContainer.innerHTML = "";
     let filteredCourses = courses;
     // filters
-    if (filter === "Completed") {
-        filteredCourses = courses.filter(course => course.completed);
-    } else if (filter === "CSE") {
+    if (filter === "CSE") {
         filteredCourses = courses.filter(course => course.subject === "CSE");
     } else if (filter === "WDD") {
         filteredCourses = courses.filter(course => course.subject === "WDD");
     }
 
     filteredCourses.forEach(course => {
-        const courseDiv = document.createElement("div");
-        courseDiv.classList.add("course-card");
-        courseDiv.style.backgroundColor = course.completed ? "brown" : "white";
-        courseDiv.style.color = course.completed ? "white" : "black";
+        const courseButton = document.createElement("button");
+        courseButton.classList.add("course-card");
+        if (course.completed) {
+            courseButton.classList.add('course-card-completed'); 
+          }
+        else {
+            courseButton.classList.add('course-card-uncompleted')
+        };
 
-        courseDiv.innerHTML = `
+        courseButton.innerHTML = `
             <p><strong>${course.subject} ${course.number}</strong></p>
-            <p>${course.title}</p>
-            <p><strong>Credits:</strong> ${course.credits}</p>
         `;
-        courseContainer.appendChild(courseDiv);
+        courseContainer.appendChild(courseButton);
     });
 
     // Calculate total credits
@@ -114,6 +114,5 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#all-btn").addEventListener("click", () => displayCourses("All"));
     document.querySelector("#cse-btn").addEventListener("click", () => displayCourses("CSE"));
     document.querySelector("#wdd-btn").addEventListener("click", () => displayCourses("WDD"));
-    document.querySelector("#completed-btn").addEventListener("click", () => displayCourses("Completed"));
     displayCourses("All");
 });

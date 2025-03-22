@@ -25,7 +25,11 @@ header {
 }
 
 header img {
-    padding-right: 35px;
+    margin-right: 1.5rem;
+    max-width: 176px;
+    max-height: 176px;
+    border-radius: 5%;
+    box-shadow: 5px 4px 10px rgba(14, 14, 14, 0.4)
 }
 
 nav {
@@ -73,7 +77,6 @@ section {
 
 .country {
     background-color: lightblue;
-    padding: 20px;
 }
 
 
@@ -148,14 +151,14 @@ section {
 }
 
 /* Completed Course Style */
-.course-card.completed {
+.course-card-completed {
     background-color: rgb(91, 73, 73);
     color: white;
 }
 
 /* Uncompleted Course Style */
-.course-card.uncompleted {
-    background-color: white;
+.course-card-uncompleted {
+    background-color: whitesmoke;
     color: black;
 }
 
@@ -165,8 +168,8 @@ section {
     font-weight: bold;
     margin-top: 10px;
 }
-/* 
-.programhead a {
+ 
+.programhead button {
     display: block;
     text-decoration: none;
     background-color: black;
@@ -179,7 +182,7 @@ section {
     text-align: center;
 }
 
-.programcourse a {
+.programcourse button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -191,8 +194,7 @@ section {
     border-radius: 5px;
     width: 350px;
     min-height: 3rem;
-    background-color: aqua;
-} */
+} 
 
 .coursework ul, .country figure {
     margin-top: 15px;
@@ -203,6 +205,7 @@ section {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
+    padding-right: 1.5rem;
 }
 
 .country figcaption {
