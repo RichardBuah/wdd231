@@ -27,30 +27,15 @@ header {
 nav {
     display: none;
     flex-direction: column;
-    background-color: #1d4e89;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: all 0.3s ease-in-out;
+    background-color: black;
 }
 
-nav.open {
+nav.show-menu {
     display: flex;
 }
 
-nav a {
-    display: block;
-    background-color: black;
-    padding: 1rem;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-nav a:hover {
-    background-color: #163d66;
+nav {
+    transition: all 0.3s ease-in-out;
 }
 
 main {
@@ -74,12 +59,10 @@ section {
 .menu-toggle {
     display: block;
     font-size: 2rem;
+    cursor: pointer;
     background: none;
     border: none;
     color: white;
-    cursor: pointer;
-    margin-left: auto;
-    padding: 10px 15px;
 }
 
 header img {
@@ -151,7 +134,9 @@ nav ul li a:hover {
 .programhead button {
     display: flex;
     justify-content: center;
-    flex: 1;
+    flex: 1 1 30%;
+    min-width: 100px;
+    max-width: 250px;
     text-decoration: none;
     background-color: black;
     color: white;
