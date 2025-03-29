@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Alberta's Palace Beach Resort",
+        "address": "Cape Coast, Ghana",
+        "phone": "+233 277202429",
+        "website": "http://albertaspalace.com",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkU782Tc03y09nf7aY0y1XTm-_LayDWiS3tw&s",
+        "membership": 3,
+        "tagline": "Tropical getaway with beach access"
+    },
+    {
+        "name": "Hilax Web Design",
+        "address": "Mfantsipim, Cape Coast, Ghana",
+        "phone": "+233 248029408",
+        "website": "https://hilaxmedia.com/services-website-development/",
+        "image": "https://source.unsplash.com/300x200/?webdesign,computer",
+        "membership": 2,
+        "tagline": "Expert web design services"
+    },
+    {
+        "name": "Ackah Infrastructures Company Limited",
+        "address": "First turn on Greenhill, Cape Coast, Ghana",
+        "phone": "+233 205187347",
+        "website": "http://ackahinfrastructures.com",
+        "image": "https://source.unsplash.com/300x200/?construction,infrastructure",
+        "membership": 3,
+        "tagline": "Quality civil works and concrete products"
+    },
+    {
+        "name": "ALConstructs Logistics & Solutions Ltd",
+        "address": "SSNIT flats, Elmina Junction, Cape Coast, Ghana",
+        "phone": "+233 502633780",
+        "website": "http://alconstructs.com",
+        "image": "https://source.unsplash.com/300x200/?logistics,construction",
+        "membership": 2,
+        "tagline": "Construction and project management"
+    },
+    {
+        "name": "Palmiye Kocak Furniture",
+        "address": "Near Fespa Hotel, Tibu Darko, Cape Coast, Ghana",
+        "phone": "+233 5559812365",
+        "website": "http://palmiye-kocak.com",
+        "image": "https://source.unsplash.com/300x200/?furniture,interior",
+        "membership": 2,
+        "tagline": "Quality furniture and interior design"
+    },
+    {
+        "name": "Doctors In Service Clinic",
+        "address": "Abura, Cape Coast, Ghana",
+        "phone": "+233 201381019",
+        "website": "http://disclinic.com",
+        "image": "https://source.unsplash.com/300x200/?clinic,healthcare",
+        "membership": 3,
+        "tagline": "Community healthcare services"
+    },
+    {
+        "name": "Duvet Print",
+        "address": "Barrier, Liberia Camp Road, Cape Coast, Ghana",
+        "phone": "+233 555373815",
+        "website": "http://duvetprint.com",
+        "image": "https://source.unsplash.com/300x200/?printing,graphics",
+        "membership": 1,
+        "tagline": "Creative printing solutions"
+    },
+    {
+        "name": "Ridge Royal Hotel",
+        "address": "Number 1, 2nd Ridge, Cape Coast, Ghana",
+        "phone": "+233 312003222",
+        "website": "https://ridgeroyalhotel.com.gh/",
+        "image": "https://source.unsplash.com/300x200/?hotel",
+        "membership": 1,
+        "tagline": "Richly inviting, comfortably yours."
+    }
+]

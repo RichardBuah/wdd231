@@ -1,0 +1,517 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* CSS Variables for colors and font */
+:root {
+    --primary-color: #1B4B66;
+    /* Deep blue (primary brand color) */
+    --secondary-color: #F9A03F;
+    /* Orange (accent color) */
+    --text-color: #333;
+    --background-color: #FFF;
+    --footer-bg-color: #ECECEC;
+    --font-family: 'Open Sans', sans-serif;
+}
+
+/* Global Styles / Reset adjustments */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    margin: 0.5em 0;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+/* Header and Navigation */
+header {
+    background: var(--primary-color);
+    color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.brand img {
+    width: 50px;
+    height: 50px;
+    margin-right: 0.5em;
+}
+
+.brand span {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #FFF;
+}
+
+.nav .menu-toggle {
+    background: none;
+    border: none;
+    color: #FFF;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    /* hidden by default (mobile) */
+    flex-direction: column;
+    background: var(--primary-color);
+}
+
+.nav-links.open {
+    display: flex;
+    /* show menu when toggled */
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #FFF;
+    padding: 0.5em 1em;
+    display: block;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-links a.active {
+    color: var(--secondary-color);
+}
+
+@media (min-width: 800px) {
+    .nav-links {
+        display: flex !important;
+        /* always show on desktop */
+        flex-direction: row;
+        align-items: center;
+        background: none;
+    }
+
+    .nav-links li {
+        margin: 0 1em;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+}
+
+/* Main content sections */
+main {
+    padding: 1em;
+}
+
+section {
+    margin: 2em 0;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+.hero::after {
+    /* dark overlay on hero image for contrast */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #FFF;
+}
+
+.hero-text h1 {
+    font-size: 2.5em;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+.btn {
+    /* Generic button style (for CTA and form submit) */
+    display: inline-block;
+    background: var(--secondary-color);
+    color: #FFF;
+    padding: 0.5em 1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #e08e36;
+    /* slightly darker orange on hover */
+}
+
+/* Highlights (Events & Weather panels on Home) */
+.info-panels {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+}
+
+.info-panel {
+    background: #FFF;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.info-panel h2 {
+    color: var(--primary-color);
+    font-size: 1.1em;
+    margin-top: 0;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.3em;
+}
+
+.info-panel ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.info-panel ul li {
+    margin: 0.3em 0;
+}
+
+.more-link {
+    display: inline-block;
+    margin-top: 0.5em;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.weather-today p {
+    margin: 0.2em 0;
+}
+
+/* Responsive columns for info-panels (3 columns on desktop) */
+@media (min-width: 600px) {
+    .info-panels {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 900px) {
+    .info-panels {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Featured Business Spotlights (Home) */
+.spotlights h2 {
+    text-align: center;
+}
+
+.business-spotlights {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+}
+
+.business-card {
+    background: #FFF;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.business-card h3 {
+    margin: 0.5em;
+}
+
+.business-card p {
+    margin: 0.5em;
+}
+
+/* Responsive columns for business spotlights */
+@media (min-width: 600px) {
+    .business-spotlights {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 900px) {
+    .business-spotlights {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Discover Page specific */
+.history,
+.demographics,
+.upcoming-events {
+    margin-bottom: 1.5em;
+}
+
+.image-montage {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.image-montage figure {
+    flex: 1 1 30%;
+    max-width: 300px;
+    margin: 0;
+}
+
+.image-montage img {
+    border-radius: 4px;
+}
+
+.image-montage figcaption {
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 0.3em;
+}
+
+/* Directory Page */
+.view-toggle {
+    text-align: right;
+    margin: 1em 0;
+}
+
+.view-toggle button {
+    background: #ccc;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 4px;
+    margin-left: 0.5em;
+}
+
+.view-toggle button.active {
+    background: var(--primary-color);
+    color: #FFF;
+}
+
+.view-toggle button:not(.active):hover {
+    background: var(--primary-color);
+    color: #FFF;
+}
+
+.directory.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+}
+
+.directory.list-view {
+    display: block;
+}
+
+.member {
+    /* card container for each member (directory or spotlight) */
+    background: #FFF;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.member img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.member-info {
+    padding: 0.5em;
+}
+
+.member-info h3 {
+    margin: 0.2em 0;
+}
+
+.member-info p {
+    margin: 0.2em 0;
+}
+
+.member-level {
+    font-weight: 700;
+}
+
+.member-level.gold {
+    color: goldenrod;
+}
+
+.member-level.silver {
+    color: #777;
+}
+
+.member-level.non-profit {
+    color: green;
+}
+
+/* Layout adjustments for list view */
+.list-view .member {
+    display: flex;
+    align-items: flex-start;
+}
+
+.list-view .member img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin: 0.5em;
+    margin-right: 1em;
+}
+
+.list-view .member-info {
+    padding: 0.5em;
+}
+
+.list-view .member:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+/* Join Page (Membership form) */
+.membership-levels ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.membership-levels li {
+    margin: 0.5em 0;
+}
+
+.membership-form form {
+    max-width: 500px;
+}
+
+.membership-form label {
+    display: block;
+    margin-top: 1em;
+    font-weight: 600;
+}
+
+.membership-form input,
+.membership-form select,
+.membership-form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.3em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font: inherit;
+}
+
+.membership-form textarea {
+    resize: vertical;
+}
+
+.membership-form .btn {
+    margin-top: 1em;
+}
+
+/* Footer */
+footer {
+    background: var(--footer-bg-color);
+    padding: 1em;
+}
+
+.footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-info p {
+    margin: 0.5em 0;
+}
+
+.social-links {
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+.social-links a {
+    margin: 0 0.5em;
+    display: inline-block;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    vertical-align: middle;
+    border-radius: 50%;
+}

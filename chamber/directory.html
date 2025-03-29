@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cape Coast Chamber – Business Directory of member businesses." />
+    <meta name="author" content="Richard Buah">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <title>Cape Coast Chamber – Directory</title>
+    <link rel="icon" href="favicon/fav.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="brand">
+            <img src="images/headericon.svg" alt="" />
+            <span>Cape Coast Chamber of Commerce</span>
+        </a>
+        <nav class="nav">
+            <button class="menu-toggle" aria-label="Open Menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html" class="active">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Business Directory</h1>
+        <p>Browse our chamber members below. Use the buttons to switch between a grid of cards or a simple list view for
+            your convenience.</p>
+        <div class="view-toggle">
+            <button id="gridToggle" class="active" aria-label="Grid view">Grid View</button>
+            <button id="listToggle" aria-label="List view">List View</button>
+        </div>
+        <div id="directoryList" class="directory grid-view">
+            <!-- Member cards will be injected here via script.js -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <p>Cape Coast Chamber of Commerce<br>
+                123 Shoreline Drive, Cape Coast<br>
+                Email: info@capecoastchamber.org<br>
+                Phone: (+233) 24156-4048
+            </p>
+            <p class="copyright">
+                &copy; <span id="currentYear"></span> Cape Coast Chamber of Commerce<br>
+                WDD 231 Class Project – Richard Buah<br>
+                Last Updated: <span id="lastModified"></span>
+            </p>
+        </div>
+        <div class="social-links">
+            <a href="#"><img src="images/facebook.svg" alt="FaceBook"></a>
+            <a href="#"><img src="images/youtube.svg" alt="YouTube"></a>
+            <a href="https://x.com/young_gnight?s=21"><img src="images/x.svg"
+                    alt="Twitter"></a>
+            <a href="linkedin.com/in/richard-buah-020079320"><img src="images/linkedin2.svg"
+                    alt="LinkedIn"></a>
+        </div>
+    </footer>
+
+    <script src="scripts/script.js" defer></script>
+</body>
+
+</html>
