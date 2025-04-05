@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     // Responsive Navigation Menu Toggle
     const menuButton = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -21,42 +21,43 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Directory Page: Fetch members data and render cards
+    // Directory Page: Fetch members data and render cards using async/await
     const directoryContainer = document.getElementById('directoryList');
     if (directoryContainer) {
         const gridToggle = document.getElementById('gridToggle');
         const listToggle = document.getElementById('listToggle');
 
-        // Fetch the JSON data of members
-        fetch('scripts/members.json')
-            .then(response => response.json())
-            .then(members => {
-                let cardsHtml = '';
-                members.forEach(member => {
-                    // Determine membership level name from numeric code
-                    let levelName = (member.membership === 3) ? 'Gold'
-                        : (member.membership === 2) ? 'Silver'
-                            : 'Non-Profit';
-                    // Construct HTML for each member card
-                    cardsHtml += `
-              <div class="member">
-                <img src="${member.image}" alt="Photo of ${member.name}">
-                <div class="member-info">
-                  <h3>${member.name}</h3>
-                  <p><em>${member.tagline}</em></p>
-                  <p>${member.address}<br>
-                     ${member.phone}<br>
-                     <a href="${member.website}" target="_blank" rel="noopener">
-                       ${member.website.replace(/^https?:\/\//, '')}
-                     </a>
-                  </p>
-                  <p class="member-level ${levelName.toLowerCase()}">${levelName} Member</p>
-                </div>
-              </div>`;
-                });
-                // Insert all member cards into the container
-                directoryContainer.innerHTML = cardsHtml;
+        try {
+            const response = await fetch('scripts/members.json');
+            if (!response.ok) throw new Error(`Failed to fetch members: ${response.status}`);
+            const members = await response.json();
+
+            let cardsHtml = '';
+            members.forEach(member => {
+                let levelName = (member.membership === 3) ? 'Gold'
+                    : (member.membership === 2) ? 'Silver'
+                        : 'Non-Profit';
+                cardsHtml += `
+                  <div class="member">
+                    <img src="${member.image}" alt="Photo of ${member.name}">
+                    <div class="member-info">
+                      <h3>${member.name}</h3>
+                      <p><em>${member.tagline}</em></p>
+                      <p>${member.address}<br>
+                         ${member.phone}<br>
+                         <a href="${member.website}" target="_blank" rel="noopener">
+                           ${member.website.replace(/^https?:\/\//, '')}
+                         </a>
+                      </p>
+                      <p class="member-level ${levelName.toLowerCase()}">${levelName} Member</p>
+                    </div>
+                  </div>`;
             });
+            directoryContainer.innerHTML = cardsHtml;
+
+        } catch (error) {
+            console.error("Error loading member data:", error);
+        }
 
         // Toggle view buttons functionality
         gridToggle.addEventListener('click', () => {
@@ -79,34 +80,33 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json();
         })
         .then(data => {
-            const currentTemp = Math.round((data.main.temp-32)*(5/9));
-            const description = data.weather[0].description.replace(/\b\w/g, c => c.toUpperCase());
-            const highTemp = Math.round((data.main.temp_max-32)*(5/9));
-            const lowTemp = Math.round((data.main.temp_min-32)*(5/9));
-            const humidity = data.main.humidity;
+            const weatherTodayElem = document.querySelector('.weather-today');
+            if (weatherTodayElem) {
+                const currentTemp = Math.round((data.main.temp - 32) * (5 / 9));
+                const description = data.weather[0].description.replace(/\b\w/g, c => c.toUpperCase());
+                const highTemp = Math.round((data.main.temp_max - 32) * (5 / 9));
+                const lowTemp = Math.round((data.main.temp_min - 32) * (5 / 9));
+                const humidity = data.main.humidity;
+                const timezoneOffset = data.timezone;
 
-            // Get timezone offset from the API response
-            const timezoneOffset = data.timezone;
+                const convertToLocalTime = (unixTimestamp, timezoneOffset) => {
+                    const date = new Date((unixTimestamp + timezoneOffset) * 1000);
+                    return date.toISOString().substr(11, 5);
+                };
 
-            // Function to convert Unix timestamp to the city's local time
-            const convertToLocalTime = (unixTimestamp, timezoneOffset) => {
-                const date = new Date((unixTimestamp + timezoneOffset) * 1000);
-                return date.toISOString().substr(11, 5); 
-            };
+                const sunrise = convertToLocalTime(data.sys.sunrise, timezoneOffset);
+                const sunset = convertToLocalTime(data.sys.sunset, timezoneOffset);
 
-            const sunrise = convertToLocalTime(data.sys.sunrise, timezoneOffset);
-            const sunset = convertToLocalTime(data.sys.sunset, timezoneOffset);
-
-            document.querySelector('.weather-today').innerHTML = `
-                <p><strong>${currentTemp}°C</strong> – ${description}</p>
-                <p>High: ${highTemp}°C, Low: ${lowTemp}°C</p>
-                <p>Humidity: ${humidity}%</p>
-                <p>Sunrise: ${sunrise} AM, Sunset: ${sunset} PM</p>
-    `;
+                weatherTodayElem.innerHTML = `
+                    <p><strong>${currentTemp}°C</strong> – ${description}</p>
+                    <p>High: ${highTemp}°C, Low: ${lowTemp}°C</p>
+                    <p>Humidity: ${humidity}%</p>
+                    <p>Sunrise: ${sunrise} AM, Sunset: ${sunset} PM</p>`;
+            } else {
+                console.warn("Element .weather-today not found");
+            }
         })
         .catch(err => console.error("Weather fetch error:", err));
-
-
 
     fetch(forecastUrl)
         .then(response => {
@@ -114,18 +114,23 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json();
         })
         .then(data => {
-            const forecasts = data.list.filter(item => item.dt_txt.includes('12:00:00')).slice(0, 3);
             const forecastContainer = document.querySelector('.forecast');
-            forecastContainer.innerHTML = '';
+            if (forecastContainer) {
+                const forecasts = data.list.filter(item => item.dt_txt.includes('12:00:00')).slice(0, 3);
+                forecastContainer.innerHTML = '';
 
-            forecasts.forEach(day => {
-                const date = new Date(day.dt_txt);
-                const dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
-                const temp = Math.round((day.main.temp-32)*(5/9));
-                forecastContainer.innerHTML += `<li>${dayName}: <strong>${temp}°C</strong></li>`;
-            });
+                forecasts.forEach(day => {
+                    const date = new Date(day.dt_txt);
+                    const dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
+                    const temp = Math.round((day.main.temp - 32) * (5 / 9));
+                    forecastContainer.innerHTML += `<li>${dayName}: <strong>${temp}°C</strong></li>`;
+                });
+            } else {
+                console.warn("Element .forecast not found");
+            }
         })
         .catch(error => console.error('Error fetching forecast:', error));
+
 
 
     // Randomly Select Business Spotlights from members.json
@@ -143,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const membershipType = member.membership === 3 ? 'Gold' : 'Silver';
 
                 spotlightContainer.innerHTML += `
-                    <div class="business-card">
+                    <div class="business-card member">
                         <img src="${member.image}" alt="${member.name}" />
                         <h3>${member.name}</h3>
                         <p>${member.tagline}</p>
@@ -169,7 +174,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-
 
 
 });

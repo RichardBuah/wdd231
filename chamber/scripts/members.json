@@ -4,7 +4,7 @@
         "address": "Cape Coast, Ghana",
         "phone": "+233 277202429",
         "website": "http://albertaspalace.com",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkU782Tc03y09nf7aY0y1XTm-_LayDWiS3tw&s",
+        "image": "images/alberta.jpeg",
         "membership": 3,
         "tagline": "Tropical getaway with beach access"
     },
@@ -13,7 +13,7 @@
         "address": "Mfantsipim, Cape Coast, Ghana",
         "phone": "+233 248029408",
         "website": "https://hilaxmedia.com/services-website-development/",
-        "image": "https://source.unsplash.com/300x200/?webdesign,computer",
+        "image": "images/hilax.jpg",
         "membership": 2,
         "tagline": "Expert web design services"
     },
@@ -22,7 +22,7 @@
         "address": "First turn on Greenhill, Cape Coast, Ghana",
         "phone": "+233 205187347",
         "website": "http://ackahinfrastructures.com",
-        "image": "https://source.unsplash.com/300x200/?construction,infrastructure",
+        "image": "images/ackah.jpg",
         "membership": 3,
         "tagline": "Quality civil works and concrete products"
     },
@@ -31,7 +31,7 @@
         "address": "SSNIT flats, Elmina Junction, Cape Coast, Ghana",
         "phone": "+233 502633780",
         "website": "http://alconstructs.com",
-        "image": "https://source.unsplash.com/300x200/?logistics,construction",
+        "image": "images/alconstruction.jpg",
         "membership": 2,
         "tagline": "Construction and project management"
     },
@@ -40,7 +40,7 @@
         "address": "Near Fespa Hotel, Tibu Darko, Cape Coast, Ghana",
         "phone": "+233 5559812365",
         "website": "http://palmiye-kocak.com",
-        "image": "https://source.unsplash.com/300x200/?furniture,interior",
+        "image": "images/palmiye.jpg",
         "membership": 2,
         "tagline": "Quality furniture and interior design"
     },
@@ -49,7 +49,7 @@
         "address": "Abura, Cape Coast, Ghana",
         "phone": "+233 201381019",
         "website": "http://disclinic.com",
-        "image": "https://source.unsplash.com/300x200/?clinic,healthcare",
+        "image": "images/disclinic.jpg",
         "membership": 3,
         "tagline": "Community healthcare services"
     },
@@ -58,7 +58,7 @@
         "address": "Barrier, Liberia Camp Road, Cape Coast, Ghana",
         "phone": "+233 555373815",
         "website": "http://duvetprint.com",
-        "image": "https://source.unsplash.com/300x200/?printing,graphics",
+        "image": "images/duvet.jpg",
         "membership": 1,
         "tagline": "Creative printing solutions"
     },
@@ -67,7 +67,7 @@
         "address": "Number 1, 2nd Ridge, Cape Coast, Ghana",
         "phone": "+233 312003222",
         "website": "https://ridgeroyalhotel.com.gh/",
-        "image": "https://source.unsplash.com/300x200/?hotel",
+        "image": "images/ridgeroyal.jpg",
         "membership": 1,
         "tagline": "Richly inviting, comfortably yours."
     }
