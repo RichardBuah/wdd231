@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         .then(members => {
             const goldSilverMembers = members.filter(member => [2, 3].includes(member.membership));
             const shuffledMembers = goldSilverMembers.sort(() => 0.5 - Math.random());
-            const selectedMembers = shuffledMembers.slice(0, Math.floor(Math.random() * 2) + 2); // 2 or 3
+            const selectedMembers = shuffledMembers.slice(0, Math.floor(Math.random() * 2) + 2); 
 
             const spotlightContainer = document.querySelector('.business-spotlights');
             spotlightContainer.innerHTML = '';

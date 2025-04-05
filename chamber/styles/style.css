@@ -409,16 +409,18 @@ section {
 }
 
 .member-level.gold {
-    color: goldenrod;
+    color:  #785A00; 
+    font-size: 1.5rem;
 }
 
 .member-level.silver {
-    color: #777;
+    color: #595959; 
 }
 
 .member-level.non-profit {
-    color: green;
+    color: #1B5E20;
 }
+
 
 /* Layout adjustments for list view */
 .list-view .member {
