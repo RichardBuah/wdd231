@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelector('.nav-links');
 
     // Weather API Integration (OpenWeatherMap)
-    const apiKey = '65095cc4071fed44ef86d98cba12514f';
+    const apiKey = '360ab4225d923ad598361e6cecfa09f1';
     const city = 'Accra';
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
@@ -75,17 +75,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
     fetch(weatherUrl)
         .then(response => {
-            if (!response.ok) throw new Error(`Weather API Error: ${response.status}`);
+            if (!response.ok) throw new Error(`Weather API error: ${response.status}`);
             return response.json();
         })
         .then(data => {
-            const currentTemp = Math.round(data.main.temp);
+            const currentTemp = Math.round((data.main.temp-32)*(5/9));
             const description = data.weather[0].description.replace(/\b\w/g, c => c.toUpperCase());
+            const highTemp = Math.round((data.main.temp_max-32)*(5/9));
+            const lowTemp = Math.round((data.main.temp_min-32)*(5/9));
+            const humidity = data.main.humidity;
 
-            document.querySelector('.weather-today').innerHTML =
-                `<p><strong>${currentTemp}°F</strong> – ${description}</p>`;
+            // Get timezone offset from the API response
+            const timezoneOffset = data.timezone;
+
+            // Function to convert Unix timestamp to the city's local time
+            const convertToLocalTime = (unixTimestamp, timezoneOffset) => {
+                const date = new Date((unixTimestamp + timezoneOffset) * 1000);
+                return date.toISOString().substr(11, 5); 
+            };
+
+            const sunrise = convertToLocalTime(data.sys.sunrise, timezoneOffset);
+            const sunset = convertToLocalTime(data.sys.sunset, timezoneOffset);
+
+            document.querySelector('.weather-today').innerHTML = `
+                <p><strong>${currentTemp}°C</strong> – ${description}</p>
+                <p>High: ${highTemp}°C, Low: ${lowTemp}°C</p>
+                <p>Humidity: ${humidity}%</p>
+                <p>Sunrise: ${sunrise} AM, Sunset: ${sunset} PM</p>
+    `;
         })
-        .catch(error => console.error('Error fetching weather:', error));
+        .catch(err => console.error("Weather fetch error:", err));
+
+
 
     fetch(forecastUrl)
         .then(response => {
@@ -100,8 +121,8 @@ document.addEventListener('DOMContentLoaded', function () {
             forecasts.forEach(day => {
                 const date = new Date(day.dt_txt);
                 const dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
-                const temp = Math.round(day.main.temp);
-                forecastContainer.innerHTML += `<li>${dayName}: <strong>${temp}°F</strong></li>`;
+                const temp = Math.round((day.main.temp-32)*(5/9));
+                forecastContainer.innerHTML += `<li>${dayName}: <strong>${temp}°C</strong></li>`;
             });
         })
         .catch(error => console.error('Error fetching forecast:', error));
@@ -122,17 +143,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 const membershipType = member.membership === 3 ? 'Gold' : 'Silver';
 
                 spotlightContainer.innerHTML += `
-            <div class="business-card">
-              <img src="${member.image}" alt="${member.name}" />
-              <h3>${member.name}</h3>
-              <p>${member.tagline}</p>
-              <p>
-                Phone: ${member.phone}<br>
-                Address: ${member.address}<br>
-                Website: <a href="${member.website}" target="_blank">${member.website}</a><br>
-                Membership Level: ${membershipType}
-              </p>
-            </div>`;
+                    <div class="business-card">
+                        <img src="${member.image}" alt="${member.name}" />
+                        <h3>${member.name}</h3>
+                        <p>${member.tagline}</p>
+                        <p>
+                        Phone: ${member.phone}<br>
+                        Address: ${member.address}<br>
+                        Website: <a href="${member.website}" target="_blank">${member.website}</a><br>
+                        Membership Level: ${membershipType}
+                        </p>
+                    </div>`;
             });
         });
 
