@@ -409,12 +409,12 @@ section {
 }
 
 .member-level.gold {
-    color:  #785A00; 
+    color: #785A00;
     font-size: 1.5rem;
 }
 
 .member-level.silver {
-    color: #595959; 
+    color: #595959;
 }
 
 .member-level.non-profit {
@@ -482,6 +482,86 @@ section {
 
 .membership-form .btn {
     margin-top: 1em;
+}
+
+/* Cards */
+.membership-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+}
+
+.card {
+    padding: 1em;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Accessible Colors */
+.gold {
+    color: #785A00;
+}
+
+.silver {
+    color: #595959;
+}
+
+.bronze {
+    color: #CD7F32;
+}
+
+.non-profit {
+    color: #1B5E20;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 1.5em;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    z-index: 1000;
+}
+
+.modal h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.modal ul {
+    padding-left: 1em;
+}
+
+.modal button.close-modal {
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.modal button.close-modal:hover {
+    background: #e08e36;
+}
+
+.modal[hidden] {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .modal {
+        width: 95%;
+        padding: 1em;
+    }
 }
 
 /* Footer */

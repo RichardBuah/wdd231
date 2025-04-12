@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         .then(members => {
             const goldSilverMembers = members.filter(member => [2, 3].includes(member.membership));
             const shuffledMembers = goldSilverMembers.sort(() => 0.5 - Math.random());
-            const selectedMembers = shuffledMembers.slice(0, Math.floor(Math.random() * 2) + 2); 
+            const selectedMembers = shuffledMembers.slice(0, Math.floor(Math.random() * 2) + 2);
 
             const spotlightContainer = document.querySelector('.business-spotlights');
             spotlightContainer.innerHTML = '';
@@ -162,6 +162,17 @@ document.addEventListener('DOMContentLoaded', async function () {
             });
         });
 
+    // Modals
+    document.querySelectorAll('.open-modal').forEach(btn => {
+        btn.onclick = () => document.getElementById(btn.dataset.modal).removeAttribute('hidden');
+    });
+    document.querySelectorAll('.close-modal').forEach(btn => {
+        btn.onclick = () => btn.closest('.modal').setAttribute('hidden', '');
+    });
+
+    // Timestamp
+    document.getElementById('formTimestamp').value = new Date().toISOString();
+
     // Footer: insert current year and last modified date
     const yearSpan = document.getElementById('currentYear');
     const modSpan = document.getElementById('lastModified');
@@ -171,9 +182,64 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (modSpan) {
         modSpan.textContent = document.lastModified;
     }
+
+    const form = document.querySelector('.form');
+
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Collect and save form data into localStorage
+            const formData = {
+                name: form.name.value,
+                email: form.email.value,
+                phone: form.phone.value,
+                organization: form.organization.value,
+                title: form.title.value,
+                level: form.level.value,
+                formTimestamp: new Date().toISOString()
+            };
+
+            localStorage.setItem('memberData', JSON.stringify(formData));
+
+            // Redirect to thankyou.html
+            window.location.href = 'thankyou.html';
+        });
+
+        // Automatically set form timestamp on form load
+        const timestampInput = document.getElementById('formTimestamp');
+        if (timestampInput) timestampInput.value = new Date().toISOString();
+    }
+
+    // Modal functionality
+    document.querySelectorAll('.open-modal').forEach(button => {
+        button.addEventListener('click', () => {
+            const modalId = button.dataset.modal;
+            document.getElementById(modalId).removeAttribute('hidden');
+        });
+    });
+
+    document.querySelectorAll('.close-modal').forEach(button => {
+        button.addEventListener('click', () => {
+            button.closest('.modal').setAttribute('hidden', '');
+        });
+    });
+
+
+    const memberData = JSON.parse(localStorage.getItem('memberData'));
+
+    if (memberData) {
+        document.getElementById('memberName').textContent = memberData.name;
+        document.getElementById('memberEmail').textContent = memberData.email;
+        document.getElementById('memberPhone').textContent = memberData.phone;
+        document.getElementById('memberOrganization').textContent = memberData.organization;
+        document.getElementById('memberLevel').textContent = memberData.level;
+        document.getElementById('formTimestamp').textContent = new Date(memberData.formTimestamp).toLocaleString();
+    } else {
+        document.querySelector('main').innerHTML = '<p>No application data found. Please submit the form again.</p>';
+    }
+
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-
-
 });

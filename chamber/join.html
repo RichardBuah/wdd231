@@ -1,23 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Join the Cape Coast Chamber of Commerce and grow your business with us." />
-    <meta name="author" content="Your Name" />
+    <meta name="author" content="Richard Buah" />
     <title>Cape Coast Chamber – Join</title>
-
-    <link rel="icon" href="images/favicon.ico" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="icon" href="favicon/fav.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <script src="scripts/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta property="og:title" content="Cape Coast Chamber – Home Page">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/headericon.svg">
+    <meta property="og:url" content="index.html">
+    <script src="scripts/script.js"></script>
 </head>
 
 <body>
     <header>
         <a href="index.html" class="brand">
-            <img src="https://via.placeholder.com/80x80.png?text=Logo" alt="" />
+            <img src="images/headericon.svg" alt="Header Icon" />
             <span>Cape Coast Chamber of Commerce</span>
         </a>
         <nav class="nav">
@@ -37,50 +44,93 @@
             and
             community influence.</p>
 
-        <section class="membership-levels">
-            <h2>Membership Levels &amp; Benefits</h2>
+        <section class="membership-cards">
+            <div class="card gold">
+                <h2>Gold</h2>
+                <button class="open-modal" data-modal="gold-modal">Learn More</button>
+            </div>
+            <div class="card silver">
+                <h2>Silver</h2>
+                <button class="open-modal" data-modal="silver-modal">Learn More</button>
+            </div>
+            <div class="card bronze">
+                <h2>Bronze</h2>
+                <button class="open-modal" data-modal="bronze-modal">Learn More</button>
+            </div>
+            <div class="card non-profit">
+                <h2>Non-Profit</h2>
+                <button class="open-modal" data-modal="nonprofit-modal">Learn More</button>
+            </div>
+        </section>
+
+        <form action="thankyou.html" method="get" class="form">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label>Full Name<input type="text" name="name" required autocomplete="name"></label>
+                <label>Email<input type="email" name="email" placeholder="example@domain.com" required
+                        autocomplete="email"></label>
+                <label>Phone<input type="tel" name="phone" required autocomplete="tel"></label>
+            </fieldset>
+            <fieldset>
+                <legend>Business Information</legend>
+                <label>Organization<input type="text" name="organization" required autocomplete="organization"></label>
+                <label>Title<input type="text" name="title" pattern="[A-Za-z\s-]{7,}" required
+                        autocomplete="organization-title" title="At least 7 letters"></label>
+            </fieldset>
+            <fieldset>
+                <legend>Membership Level</legend>
+                <label><input type="radio" name="level" value="Gold" required>Gold</label>
+                <label><input type="radio" name="level" value="Silver">Silver</label>
+                <label><input type="radio" name="level" value="Bronze">Bronze</label>
+                <label><input type="radio" name="level" value="Non-Profit">Non-Profit</label>
+            </fieldset>
+            <input type="hidden" name="formTimestamp" id="formTimestamp">
+            <button type="submit">Submit Application</button>
+        </form>
+
+        <!-- Membership Modals -->
+        <div id="gold-modal" class="modal" hidden>
+            <h3>Gold Membership Benefits</h3>
             <ul>
-                <li><strong>Non-Profit Membership:</strong> Reduced dues for charities &amp; NGOs. Includes basic
-                    directory
-                    listing and access to training workshops.</li>
-                <li><strong>Silver Membership:</strong> Standard membership for businesses. Includes directory listing,
-                    networking luncheons, and social media mentions.</li>
-                <li><strong>Gold Membership:</strong> Premier level with maximum benefits. Includes prominent directory
-                    listing,
-                    event sponsorship opportunities, advertising in chamber publications, and all Silver perks.</li>
+                <li>Prominent directory listing</li>
+                <li>Event sponsorship opportunities</li>
+                <li>Advertising in chamber publications</li>
+                <li>Access to exclusive chamber events</li>
             </ul>
-        </section>
+            <button class="close-modal">Close</button>
+        </div>
 
-        <section class="membership-form">
-            <h2>Membership Application</h2>
-            <form action="thankyou.html" method="GET">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
+        <div id="silver-modal" class="modal" hidden>
+            <h3>Silver Membership Benefits</h3>
+            <ul>
+                <li>Enhanced directory listing</li>
+                <li>Networking luncheons</li>
+                <li>Social media mentions</li>
+                <li>Discounts on chamber-sponsored events</li>
+            </ul>
+            <button class="close-modal">Close</button>
+        </div>
 
-                <label for="businessName">Business Name:</label>
-                <input type="text" id="businessName" name="businessName" required>
+        <div id="bronze-modal" class="modal" hidden>
+            <h3>Bronze Membership Benefits</h3>
+            <ul>
+                <li>Basic directory listing</li>
+                <li>Entry to networking events</li>
+                <li>Access to chamber newsletters</li>
+            </ul>
+            <button class="close-modal">Close</button>
+        </div>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+        <div id="nonprofit-modal" class="modal" hidden>
+            <h3>Non-Profit Membership Benefits</h3>
+            <ul>
+                <li>Reduced membership dues</li>
+                <li>Basic directory listing</li>
+                <li>Access to training workshops</li>
+            </ul>
+            <button class="close-modal">Close</button>
+        </div>
 
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone">
-
-                <label for="level">Membership Level:</label>
-                <select id="level" name="level" required>
-                    <option value="" disabled selected>Select a level</option>
-                    <option value="Non-Profit">Non-Profit</option>
-                    <option value="Silver">Silver</option>
-                    <option value="Gold">Gold</option>
-                </select>
-
-                <label for="comments">Additional Comments:</label>
-                <textarea id="comments" name="comments" rows="4"
-                    placeholder="Questions or additional information..."></textarea>
-
-                <button type="submit" class="btn">Submit Application</button>
-            </form>
-        </section>
     </main>
 
     <footer>
@@ -88,18 +138,19 @@
             <p>Cape Coast Chamber of Commerce<br>
                 123 Shoreline Drive, Cape Coast<br>
                 Email: info@capecoastchamber.org<br>
-                Phone: (123) 456-0000
+                Phone: (+233) 24156-4048
             </p>
             <p class="copyright">
                 &copy; <span id="currentYear"></span> Cape Coast Chamber of Commerce<br>
-                WDD 231 Class Project – Your Name<br>
+                WDD 231 Class Project – Richard Buah<br>
                 Last Updated: <span id="lastModified"></span>
             </p>
         </div>
         <div class="social-links">
-            <a href="#"><img src="https://via.placeholder.com/24?text=Y" alt="YouTube"></a>
-            <a href="#"><img src="https://via.placeholder.com/24?text=T" alt="Twitter"></a>
-            <a href="#"><img src="https://via.placeholder.com/24?text=L" alt="LinkedIn"></a>
+            <a href="#"><img src="images/facebook.svg" alt="FaceBook"></a>
+            <a href="#"><img src="images/youtube.svg" alt="YouTube"></a>
+            <a href="https://x.com/young_gnight?s=21"><img src="images/x.svg" alt="Twitter"></a>
+            <a href="linkedin.com/in/richard-buah-020079320"><img src="images/linkedin2.svg" alt="LinkedIn"></a>
         </div>
     </footer>
 </body>
