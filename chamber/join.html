@@ -16,7 +16,7 @@
     <meta property="og:title" content="Cape Coast Chamber – Home Page">
     <meta property="og:type" content="website">
     <meta property="og:image" content="images/headericon.svg">
-    <meta property="og:url" content="index.html">
+    <meta property="og:url" content="join.html">
     <script src="scripts/script2.js" defer></script>
 </head>
 
@@ -68,7 +68,7 @@
                 <label>Full Name<input type="text" name="name" required autocomplete="name"></label>
                 <label>Email<input type="email" name="email" placeholder="example@domain.com" required
                         autocomplete="email"></label>
-                <label>Phone<input type="tel" name="phone" required autocomplete="tel"></label>
+                <label>Phone<input type="text" name="phone" required autocomplete="tel"></label>
             </fieldset>
             <fieldset>
                 <legend>Business Information</legend>
@@ -82,6 +82,10 @@
                 <label><input type="radio" name="level" value="Silver">Silver</label>
                 <label><input type="radio" name="level" value="Bronze">Bronze</label>
                 <label><input type="radio" name="level" value="Non-Profit">Non-Profit</label>
+            </fieldset>
+            <fieldset>
+                <legend>Message</legend>
+                <label><textarea name="textarea" id="textareaid"></textarea></label>
             </fieldset>
             <input type="hidden" name="formTimestamp" id="formTimestamp">
             <button type="submit">Submit Application</button>
