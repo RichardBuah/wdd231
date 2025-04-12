@@ -4,14 +4,20 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Thank you for joining the Cape Coast Chamber." />
-    <title>Cape Coast Chamber – Thank You</title>
-
-    <link rel="icon" href="images/favicon.ico" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
-    <link rel="stylesheet" href="styles/style.css" />
+    <meta name="description" content="Thank you for joining the Cape Coast Chamber of Commerce and grow your business with us." />
+    <meta name="author" content="Richard Buah" />
+    <title>Cape Coast Chamber – Thank you</title>
+    <link rel="icon" href="favicon/fav.ico" type="image/x-icon" />
     <link rel="stylesheet" href="styles/normalize.css" />
-    <script src="scripts/script.js"></script>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta property="og:title" content="Cape Coast Chamber – Home Page">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/headericon.svg">
+    <meta property="og:url" content="index.html">
+    <script src="scripts/script2.js"></script>
 </head>
 
 <body>
@@ -32,14 +38,7 @@
     </header>
 
     <main>
-        <h1>Thank You for Joining!</h1>
-        <p>Thank you, <strong id="memberName"></strong>, for applying for membership in the Cape Coast Chamber of
-            Commerce.</p>
-        <p><strong>Email:</strong> <span id="memberEmail"></span></p>
-        <p><strong>Phone:</strong> <span id="memberPhone"></span></p>
-        <p><strong>Organization:</strong> <span id="memberOrganization"></span></p>
-        <p><strong>Membership Level:</strong> <span id="memberLevel"></span></p>
-        <p><em>Your application was submitted on <span id="formTimestamp"></span></em>.</p>
+        <section class="thank-you-message" id="thankYouContainer"></section>
     </main>
 
     <footer>
@@ -62,6 +61,6 @@
             <a href="linkedin.com/in/richard-buah-020079320"><img src="images/linkedin2.svg" alt="LinkedIn"></a>
         </div>
     </footer>
-</body>
+</body id="thankyou-page">
 
 </html>

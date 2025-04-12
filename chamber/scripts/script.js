@@ -226,20 +226,23 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
 
 
-    const memberData = JSON.parse(localStorage.getItem('memberData'));
+    if (document.body.id === 'thankyou-page') {
+        const container = document.getElementById('thankYouContainer');
+        const memberDocs = JSON.parse(localStorage.getItem('memberData'));
 
-    if (memberData) {
-        document.getElementById('memberName').textContent = memberData.name;
-        document.getElementById('memberEmail').textContent = memberData.email;
-        document.getElementById('memberPhone').textContent = memberData.phone;
-        document.getElementById('memberOrganization').textContent = memberData.organization;
-        document.getElementById('memberLevel').textContent = memberData.level;
-        document.getElementById('formTimestamp').textContent = new Date(memberData.formTimestamp).toLocaleString();
-    } else {
-        document.querySelector('main').innerHTML = '<p>No application data found. Please submit the form again.</p>';
+        if (memberData) {
+            container.textContent = `
+                <h2>Thank You for Joining!</h2>
+                <p>Thank you, <strong>${memberDocs.name}</strong>, for applying for membership in the Cape Coast Chamber of Commerce.</p>
+                <p><strong>Email:</strong> ${memberDocs.email}</p>
+                <p><strong>Phone:</strong> ${memberDocs.phone}</p>
+                <p><strong>Organization:</strong> ${memberDocs.organization}</p>
+                <p><strong>Membership Level:</strong> ${memberDocs.level}</p>
+                <p><em>Your application was submitted on ${new Date(memberDocs.formTimestamp).toLocaleString()}.</em></p>
+                                            `;
+        } else {
+            container.innerHTML = '<p>No application data found. Please submit the form again.</p>';
+        }
     }
 
-});
-
-document.addEventListener('DOMContentLoaded', () => {
 });
