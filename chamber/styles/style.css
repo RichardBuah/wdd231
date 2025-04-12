@@ -530,6 +530,10 @@ section {
     z-index: 1000;
 }
 
+.membership-cards h2 {
+    color: #333;
+}
+
 .modal h3 {
     margin-top: 0;
     color: var(--primary-color);
