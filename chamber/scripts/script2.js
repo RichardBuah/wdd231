@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!cardContainer) return;
 
     try {
-        const response = await fetch('/chamber/data/items.json');
+        const response = await fetch('../data/items.json');
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
         const items = await response.json();
 
