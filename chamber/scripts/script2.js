@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     </figure>
                     <address>${item.address}</address>
                     <p>${item.description}</p>
-                    <button>Learn More</button>
+                    <button class="visitbtn">Learn More</button>
                 `;
 
             cardContainer.appendChild(card);
