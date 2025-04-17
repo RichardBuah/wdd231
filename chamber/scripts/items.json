@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Cape Coast Castle",
+        "address": "Cape Coast Castle, Cape Coast, Ghana",
+        "description": "A historic slave castle and museum on the Atlantic coast, central to the trans-Atlantic slave trade.",
+        "image": "images/castle.jpg"
+    },
+    {
+        "name": "Elmina Castle",
+        "address": "Elmina Castle, Elmina, Ghana",
+        "description": "Built by the Portuguese in 1482, it is the oldest European building in Sub-Saharan Africa.",
+        "image": "images/elmina.jpg"
+    },
+    {
+        "name": "Kakum National Park",
+        "address": "Kakum National Park, Central Region, Ghana",
+        "description": "Known for its rainforest canopy walkway and diverse wildlife including forest elephants and monkeys.",
+        "image": "images/kakum.jpg"
+    },
+    {
+        "name": "Cape Coast University Botanical Gardens",
+        "address": "University of Cape Coast, Cape Coast, Ghana",
+        "description": "A serene environment for learning and relaxing, showcasing a variety of plant species.",
+        "image": "images/botanical.jpg"
+    },
+    {
+        "name": "Fort William Lighthouse",
+        "address": "Lighthouse Road, Cape Coast, Ghana",
+        "description": "A red-and-white striped colonial lighthouse offering views of the coastline.",
+        "image": "images/lighthouse.jpg"
+    },
+    {
+        "name": "Cape Coast Market",
+        "address": "Market Circle, Cape Coast, Ghana",
+        "description": "A bustling market with local goods, textiles, food, and cultural artifacts.",
+        "image": "images/market.jpg"
+    },
+    {
+        "name": "Brenu Beach",
+        "address": "Brenu Akyinim, Cape Coast, Ghana",
+        "description": "A quiet beach ideal for relaxation and long walks, away from the city center.",
+        "image": "images/brenu.jpg"
+    },
+    {
+        "name": "Posuban Shrine",
+        "address": "Asafo Street, Cape Coast, Ghana",
+        "description": "Colorful traditional shrines of the Asafo companies featuring symbolic artwork and figures.",
+        "image": "images/posuban.jpg"
+    }
+]
