@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "title": "Mountain Bike",
+        "category": "Sports & Outdoors",
+        "description": "A used 21-speed mountain bike in good condition. Recently tuned and has new tires.",
+        "price": 120,
+        "image": "https://via.placeholder.com/300x200?text=Bike",
+        "condition": "Used - Good",
+        "learnMore": "Ideal for trail riders or daily commuters, this bike provides smooth shifting and durable tires for safe and comfortable travel."
+    },
+    {
+        "id": 2,
+        "title": "Electric Guitar",
+        "category": "Musical Instruments",
+        "description": "Pre-owned electric guitar with minor scratches. Includes a strap and soft case.",
+        "price": 200,
+        "image": "https://via.placeholder.com/300x200?text=Guitar",
+        "condition": "Used - Fair",
+        "learnMore": "Perfect for beginners or hobbyists, this guitar delivers rich tones and includes accessories to get you started right away."
+    },
+    {
+        "id": 3,
+        "title": "Coffee Maker",
+        "category": "Home Appliances",
+        "description": "Drip coffee maker, 12-cup capacity. Clean and works perfectly, with reusable filter.",
+        "price": 25,
+        "image": "https://via.placeholder.com/300x200?text=Coffee+Maker",
+        "condition": "Used - Good",
+        "learnMore": "Wake up to fresh coffee every day. This reliable machine is simple to operate and easy to clean, with a compact footprint."
+    },
+    {
+        "id": 4,
+        "title": "Office Desk Chair",
+        "category": "Furniture",
+        "description": "Ergonomic office chair with adjustable height and tilt. Black color, some wear on armrests.",
+        "price": 45,
+        "image": "https://via.placeholder.com/300x200?text=Desk+Chair",
+        "condition": "Used - Good",
+        "learnMore": "Stay productive with ergonomic comfort. Great for home or office use, the seat offers lumbar support and a padded cushion."
+    },
+    {
+        "id": 5,
+        "title": "Dining Table Set",
+        "category": "Furniture",
+        "description": "Wooden dining table with 4 chairs. Classic design, sturdy build, a few scratches on surface.",
+        "price": 150,
+        "image": "https://via.placeholder.com/300x200?text=Dining+Set",
+        "condition": "Used - Fair",
+        "learnMore": "A space-saving set for family meals or entertaining guests. Chairs are comfortable and table is sturdy and stylish."
+    },
+    {
+        "id": 6,
+        "title": "Gaming Laptop",
+        "category": "Electronics",
+        "description": "15.6-inch gaming laptop, 16GB RAM, GTX 1070 GPU. High performance, well-maintained, with charger.",
+        "price": 800,
+        "image": "https://via.placeholder.com/300x200?text=Gaming+Laptop",
+        "condition": "Used - Like New",
+        "learnMore": "Whether for gaming or graphic work, this laptop can handle it all. It stays cool under load and includes powerful specs."
+    },
+    {
+        "id": 7,
+        "title": "Smartphone - iPhone 11",
+        "category": "Electronics",
+        "description": "Black iPhone 11, 128GB. Unlocked, battery health 85%, comes with a case and screen protector.",
+        "price": 300,
+        "image": "https://via.placeholder.com/300x200?text=Smartphone",
+        "condition": "Used - Good",
+        "learnMore": "A great smartphone for everyday use with excellent camera quality and fast performance. Factory reset and ready to go."
+    },
+    {
+        "id": 8,
+        "title": "Graphic Design Service",
+        "category": "Services",
+        "description": "Freelance graphic designer offering logo and branding design. Portfolio available upon request.",
+        "price": 30,
+        "rateUnit": "hour",
+        "image": "https://via.placeholder.com/300x200?text=Graphic+Design",
+        "learnMore": "From branding to brochures, I can help you visualize your business. Fast turnaround and professional results guaranteed."
+    },
+    {
+        "id": 9,
+        "title": "Web Development Service",
+        "category": "Services",
+        "description": "Professional web developer for hire. Specializing in small business websites and e-commerce.",
+        "price": 50,
+        "rateUnit": "hour",
+        "image": "https://via.placeholder.com/300x200?text=Web+Dev",
+        "learnMore": "Build a modern website tailored to your business needs. Mobile-friendly, SEO-optimized, and affordable service."
+    },
+    {
+        "id": 10,
+        "title": "Math Tutoring - High School",
+        "category": "Services",
+        "description": "Experienced tutor for high school math (Algebra, Geometry, Calculus). Online or local sessions.",
+        "price": 20,
+        "rateUnit": "hour",
+        "image": "https://via.placeholder.com/300x200?text=Tutoring",
+        "learnMore": "Boost your grades with personalized help. I make math easy to understand with step-by-step explanations and patience."
+    },
+    {
+        "id": 11,
+        "title": "Dog Walking Service",
+        "category": "Services",
+        "description": "Reliable dog walking in your neighborhood. 30-minute walks, available weekday mornings.",
+        "price": 15,
+        "rateUnit": "walk",
+        "image": "https://via.placeholder.com/300x200?text=Dog+Walking",
+        "learnMore": "Give your furry friend the care they deserve. I\u2019m reliable, friendly, and happy to help dogs stay healthy and active."
+    },
+    {
+        "id": 12,
+        "title": "Vintage Comic Book Collection",
+        "category": "Collectibles",
+        "description": "Collection of 20 vintage comic books from the 1980s. Rare issues included, well preserved.",
+        "price": 75,
+        "image": "https://via.placeholder.com/300x200?text=Comics",
+        "condition": "Used - Good",
+        "learnMore": "For collectors and fans, this set includes original editions with vibrant covers and preserved pages in protective sleeves."
+    },
+    {
+        "id": 13,
+        "title": "Baby Stroller",
+        "category": "Baby & Kids",
+        "description": "Foldable baby stroller, lightly used. Safe and comfortable, with cup holder and storage basket.",
+        "price": 60,
+        "image": "https://via.placeholder.com/300x200?text=Stroller",
+        "condition": "Used - Like New",
+        "learnMore": "Safe and sturdy with smooth wheels. Ideal for infants and toddlers on the go. Easy to fold and store in your trunk."
+    },
+    {
+        "id": 14,
+        "title": "Lawn Mower (Gas)",
+        "category": "Home & Garden",
+        "description": "Gasoline push lawn mower, 21-inch blade. Runs well, recently serviced and blades sharpened.",
+        "price": 100,
+        "image": "https://via.placeholder.com/300x200?text=Lawn+Mower",
+        "condition": "Used - Good",
+        "learnMore": "Tame your lawn effortlessly. Lightweight and easy to maneuver with a sharp blade that delivers a clean, even cut."
+    },
+    {
+        "id": 15,
+        "title": "Winter Coat (Men's L)",
+        "category": "Clothing",
+        "description": "Men's large winter coat, waterproof and insulated. Worn one season, very warm, no tears.",
+        "price": 40,
+        "image": "https://via.placeholder.com/300x200?text=Winter+Coat",
+        "condition": "Used - Good",
+        "learnMore": "Perfect for harsh winters. Water-repellent shell with fleece lining ensures you stay warm without sacrificing style."
+    },
+    {
+        "id": 16,
+        "title": "Running Shoes (Size 10)",
+        "category": "Clothing",
+        "description": "Pair of running shoes, size 10 US. Worn a few times, still in great shape with plenty of tread.",
+        "price": 30,
+        "image": "https://via.placeholder.com/300x200?text=Running+Shoes",
+        "condition": "Used - Good",
+        "learnMore": "Designed for comfort and support, these sneakers are ideal for gym sessions, running, or casual wear with great traction."
+    }
+]

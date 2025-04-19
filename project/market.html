@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Browse listings of used items and services on TradeX's marketplace." />
+    <meta property="og:title" content="TradeX - Marketplace" />
+    <meta property="og:description"
+        content="Explore a variety of products and freelance services for offer in your area." />
+    <title>TradeX - Market</title>
+    <link rel="icon" href="favicon/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script type="module" src="scripts/market.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <a class="logo-container" href="index.html">
+            <img src="favicon/favicon.png" alt="TradeX Logo" class="site-logo" />
+            <span class="site-title">TradeX</span>
+        </a>
+        <nav>
+            <button id="menuBtn" aria-label="Open Menu" aria-expanded="false">☰</button>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="market.html" class="active" aria-current="page">Market</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="signup.html">Sign&nbsp;Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Marketplace Listings</h1>
+        <p class="lead">Browse the latest items for sale and services offered by local users:</p>
+        <!-- Container for item cards (populated by JS) -->
+        <div id="cards-container" class="cards">
+            <p class="loading">Loading listings, please wait...</p>
+        </div>
+
+        <!-- Modal Dialog for item details (hidden by default) -->
+        <div id="modalOverlay" class="modal" aria-hidden="true">
+            <div class="modal-dialog" role="dialog" aria-modal="true" aria-label="Item Details">
+                <button id="closeModal" class="modal-close" aria-label="Close Details">✖</button>
+                <div id="modalContent" class="modal-content"><!-- filled by JavaScript --></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 TradeX. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
